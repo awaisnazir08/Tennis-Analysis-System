@@ -22,3 +22,4 @@ runs/detect/predict2/image.png
 runs/detect/predict3/input_video.avi
 runs/detect/predict4/input_video.avi
 runs/detect/track/input_video.avi
+utils/__pycache__
