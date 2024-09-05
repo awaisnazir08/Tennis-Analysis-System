@@ -1,11 +1,11 @@
 import torch
 import torchvision.transforms as transforms
-from torchvision import models
+from torchvision.models import resnet50, ResNet50_Weights
 import cv2
 import numpy as np
 class CourtLineDetector:
     def __init__(self, model_path):
-        self.model = models.resnet50(pretrained = True)
+        self.model = resnet50(weights=ResNet50_Weights.IMAGENET1K_V1)
         self.model.fc = torch.nn.Linear(self.model.fc.in_features, 14*2)
         self.model.load_state_dict(torch.load(model_path, map_location='cpu'))
         
